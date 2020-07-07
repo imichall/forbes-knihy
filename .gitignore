@@ -1,0 +1,8 @@
+app/config/local.neon
+temp/
+log/
+deployment/
+deploy
+deploy.live.ini
+deploy.live.log
+deploy.sample.ini

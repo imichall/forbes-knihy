@@ -1,0 +1,131 @@
+.Icon {
+    padding-left: map-get($spacing, 2);
+    width: 16px;
+    height: 16px;
+    transition: all 0.2s ease-in-out;
+}
+
+.Icon__arrow {
+    fill: currentColor;
+}
+
+.Icon-menu {
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    color: map-get($ui-colors, primary);
+    fill: currentColor;
+
+    @include darkmode {
+        color: map-get($ui-colors, orange);
+    }
+}
+
+.Icon-podcast {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+    color: #c462eb;
+}
+
+.Icon-trash {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    color: map-get($ui-colors, red);
+}
+
+.Icon-edit {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    color: map-get($ui-colors, blue);
+}
+
+.Icon-check {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    color: darken(map-get($ui-colors, success), 30%);
+}
+
+.Icon-rss {
+    margin-right: map-get($spacing, 2);
+    width: 11px;
+    height:11px;
+    fill: currentColor;
+    color: map-get($ui-colors, orange);
+}
+
+.Icon-generate,
+.Icon-signout,
+.Icon-list,
+.Icon-user {
+    margin-right: map-get($spacing, 2);
+    width: 11px;
+    height:11px;
+    fill: currentColor;
+    color: map-get($ui-colors, red);
+}
+
+.Icon-user {
+    fill: currentColor;
+    color: map-get($ui-colors, success);
+}
+
+.Icon-arrow-left,
+.Icon-add {
+    margin-right: map-get($spacing, 2);
+    width: 11px;
+    height:11px;
+    fill: currentColor;
+    color: map-get($ui-colors, primary);
+}
+
+.Icon-error {
+    display: inline-flex;
+    width: 12px;
+    height: 12px;
+    color: map-get($ui-colors, red);
+    margin-right: map-get($spacing, 3);
+}
+
+.Icon-info {
+    display: block;
+    width: 28px;
+    height: 28px;
+    // color: darken(map-get($ui-colors, success), 30%);
+    fill: currentColor;
+}
+
+.Icon--absolute {
+    position: absolute;
+    right: map-get($spacing, 2);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.Icon-arrowDown {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+    transform: rotate(-90deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.Icon-BrandLogo {
+    display: inline-flex;
+    width: 90px;
+    height: 25px;
+    color: map_get($ui-colors, primary);
+    fill: currentColor;
+}
+
+.Icon-Restart {
+    display: inline-flex;
+    width: 75px;
+    height: 12px;
+    margin: 10px 0;
+    color: map_get($ui-colors, secondary);
+    fill: currentColor;
+}

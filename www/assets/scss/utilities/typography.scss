@@ -1,0 +1,28 @@
+.u-typographyUppercase {
+    text-transform: uppercase !important;
+}
+
+.u-typographyLeft {
+    text-align: left !important;
+}
+
+.u-typographyCenter {
+    text-align: center !important;
+}
+
+.u-typographyRight {
+    text-align: right !important;
+}
+
+.u-textMuted {
+    @include font-size(m3);
+
+    display: flex;
+    position: absolute;
+    top: -30px;
+    right: 0;
+    color: darken(map-get($ui-colors, orange), 30%);
+    background: map-get($ui-colors, orange);
+    font-style: oblique;
+    border-radius: 5px;
+}

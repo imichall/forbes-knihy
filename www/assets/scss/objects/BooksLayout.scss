@@ -1,0 +1,109 @@
+.BooksLayout {
+    display: grid;
+    margin: map_get($spacing, 70) 0;
+}
+
+.BooksLayout__Title {
+    @include font-size(3);
+
+    display: flex;
+    justify-content: center;
+
+    h2 {
+        font-family: $typography-font-family-baseBold;
+    }
+}
+
+.BooksLayout__Books {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: map_get($spacing, 6) 0;
+    justify-items: center;
+}
+
+.BooksLayout__Books--single {
+    display: grid;
+    padding: map_get($spacing, 4) map_get($spacing, 7);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        'image image'
+        'title title'
+        'price price'
+        'order order'
+        'infoButton infoButton';
+    grid-template-rows: repeat(4, auto);
+    grid-row-gap: 15px;
+    border: 1px solid lighten(map_get($ui-colors, light-primary), 30%);
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        box-shadow: $boxshadow;
+    }
+}
+
+.Book__image {
+    grid-area: image;
+
+    img {
+        width: 225px;
+    }
+}
+
+.Book__title {
+    grid-area: title;
+    display: grid;
+    justify-items: center;
+
+    p {
+        @include font-size(2);
+
+        font-family: $typography-font-family-baseBold;
+        text-transform: uppercase;
+    }
+
+    span {
+        @include font-size(m1);
+
+        font-family: $typography-font-family-base;
+        color: map_get($ui-colors, light-primary);
+    }
+}
+
+.Book__price {
+    grid-area: price;
+    display: grid;
+    justify-items: center;
+
+    p {
+        @include font-size(0);
+
+        font-family: $typography-font-family-baseBold;
+    }
+
+    span {
+        @include font-size(0);
+
+        font-family: $typography-font-family-base;
+        color: map_get($ui-colors, light-primary);
+        text-decoration: line-through;
+    }
+}
+
+.Book__order,
+.Book__infoButton {
+    @include font-size(m2);
+
+    grid-area: order;
+    display: grid;
+    justify-items: center;
+    font-family: $typography-font-family-baseBold;
+    text-transform: uppercase;
+    color: map_get($ui-colors, secondary)
+}
+
+.Book__infoButton {
+    grid-area: infoButton;
+    color: map_get($ui-colors, primary);
+}
+
+

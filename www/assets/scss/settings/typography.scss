@@ -1,0 +1,61 @@
+// stylelint-disable property-no-unknown
+
+$typography-font-family-base: "OpenSans-Regular", helvetica, arial, sans-serif;
+$typography-font-family-baseBold: "OpenSans-SemiBold", helvetica, arial, sans-serif;
+$typography-font-family-noto: "NotoSerif-Regular", helvetica, arial, sans-serif;
+
+$typography-font-weight-values: (
+    light: "wght" 300,
+    regular: "wght" 400,
+    semiBold: "wght" 500,
+    bold: "wght" 700,
+);
+
+$typography-font-size-root: 100%;
+$typography-line-height-base: 1.875;
+
+// Font sizes are computed from pixels to rem for better connection with design.
+$_typography-font-size-root-in-px: $typography-font-size-root / 100% * 16;
+
+$typography-scale: (
+    m4: (
+        10 / $_typography-font-size-root-in-px + rem,
+    ),
+    m3: (
+        12 / $_typography-font-size-root-in-px + rem,
+    ),
+    m2: (
+        14 / $_typography-font-size-root-in-px + rem,
+    ),
+    m1: (
+        15 / $_typography-font-size-root-in-px + rem,
+    ),
+    0: (
+        16 / $_typography-font-size-root-in-px + rem,
+    ),
+    1: (
+        18 / $_typography-font-size-root-in-px + rem,
+    ),
+    2: (
+        20 / $_typography-font-size-root-in-px + rem,
+    ),
+    3: (
+        22 / $_typography-font-size-root-in-px + rem,
+    ),
+    4: (
+        25 / $_typography-font-size-root-in-px + rem,
+    ),
+    5: (
+        27 / $_typography-font-size-root-in-px + rem,
+    ),
+    6: (
+        35 / $_typography-font-size-root-in-px + rem,
+    ),
+    7: (
+        50 / $_typography-font-size-root-in-px + rem,
+    ),
+);
+
+@mixin font-size($size) {
+    font-size: map-get($typography-scale, $size);
+}

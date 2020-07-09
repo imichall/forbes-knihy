@@ -1,0 +1,52 @@
+.NavbarLayout {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+}
+
+.NavbarLayout__onlineUsers {
+    //display: flex;
+    position: absolute;
+    right: 0;
+    padding: map_get($spacing, 2) map_get($spacing, 3);
+    flex-direction: column;
+    background: rgba(map_get($ui-colors, light-primary), 0.3);
+    font-family: $typography-font-family-baseBold;
+    color: map_get($ui-colors, primary);
+    height: 40px;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    z-index: 100;
+    overflow: hidden;
+
+    &:hover {
+        .Icon-arrowDown {
+            transform: rotate(0deg);
+        }
+    }
+
+    &.show {
+        height: auto;
+        background: rgba(map_get($ui-colors, primary), 1);
+        color: map_get($ui-colors, secondary);
+        box-shadow: $boxshadow;
+
+        .Icon-arrowDown {
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+.NavbarLayout__onlineUser {
+    display: block;
+    margin-top: map_get($spacing, 2);
+    font-family: $typography-font-family-base;
+
+    &:before {
+        content: '\25CF';
+        padding-right: map_get($spacing, 2);
+        color: map_get($ui-colors, success);
+    }
+}

@@ -7,3 +7,4 @@ deploy
 deploy.live.ini
 deploy.live.log
 deploy.sample.ini
+node_modules/

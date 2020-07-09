@@ -1,0 +1,226 @@
+.Forms {
+    @extend %typography-style-form-label;
+
+    position: relative;
+
+    &.Login {
+        position: absolute;
+        max-width: 600px;
+        margin: 0 auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    display: grid;
+    box-shadow: 0 30px 99px rgba(map-get($ui-colors, primary), .1);
+    padding: map-get($spacing, 3);
+    border: 1px solid rgba(map-get($ui-colors, light-primary), 0.2);
+
+    input,
+    input[data-order],
+    select,
+    textarea {
+        @include font-size(0);
+
+        position: relative;
+        display: grid;
+        padding: map-get($spacing, 2);
+        width: 250px;
+        border: 1px solid rgba(map-get($ui-colors, light-primary), 0.3);
+        transition: all 0.1s ease-in-out;
+        resize: vertical;
+        justify-self: end;
+        border-radius: 5px;
+
+        &:focus,
+        &:hover {
+            border: 1px solid map-get($ui-colors, primary);
+            box-shadow: 0 15px 50px rgba(map-get($ui-colors, primary), .09);
+        }
+
+        + .u-textMuted {
+            display: flex;
+            visibility: hidden;
+            opacity: 0;
+            height: 0;
+        }
+
+        &:hover + .u-textMuted,
+        &:focus + .u-textMuted {
+            margin-bottom: map-get($spacing, 1);
+            padding: map-get($spacing, 1) map-get($spacing, 2);
+            visibility: visible;
+            opacity: 1;
+            height: initial;
+        }
+    }
+
+    input[type="date"],
+    input[type="time"] {
+        display: flex;
+        font-family: $typography-font-family-base;
+        resize: none;
+    }
+
+    input[data_order] {
+        position: relative;
+
+        &:disabled {
+            font-weight: 700;
+            color: rgba(map-get($ui-colors, primary), .6);
+            background: rgba(map-get($ui-colors, success), 0.2);
+            border: 1px solid map-get($ui-colors, success);
+            cursor: not-allowed;
+        }
+    }
+
+    textarea[data-textarea] {
+        max-width: 500px;
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    label {
+        display: flex;
+        justify-items: start;
+        align-self: flex-start;
+        white-space: nowrap;
+
+        &.required:after {
+            content: '*';
+            padding: 0 map-get($spacing, 2);
+            color: map-get($ui-colors, red);
+        }
+    }
+
+    input[type="file"] {
+        display: block;
+        margin-bottom: map-get($spacing, 7);
+        width: 100%;
+    }
+
+    input[type="submit"] {
+        @include font-size(2);
+
+        display: grid;
+        width: 100%;
+        justify-self: end;
+        background: map-get($ui-colors, orange);
+        color: map-get($ui-colors, primary);
+        transition: all 0.1s ease-in-out;
+        border: 1px solid map-get($ui-colors, orange);
+        cursor: pointer;
+
+        &:hover {
+            background: map-get($ui-colors, primary);
+            color: map-get($ui-colors, orange);
+        }
+    }
+
+    .Forms__upload {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            margin-bottom: map-get($spacing, 3);
+        }
+    }
+}
+
+.Forms__input {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 10px;
+
+    .Forms__inputFlex {
+        display: block;
+        text-align: right;
+    }
+
+    .timeInput {
+        display: inline-flex;
+        width: 50px;
+        text-align: center;
+
+        &:not(:first-child) {
+            margin-left: map-get($spacing, 1);
+        }
+    }
+}
+
+#filename {
+    @extend %typography-style-form-label;
+
+    display: block;
+    width: 100%;
+
+}
+
+#progress {
+    @extend %typography-style-form-label;
+
+    color: darken(map-get($ui-colors, success), 30%);
+}
+
+#progressBar {
+    border-radius: 5px;
+    height: 30px;
+    width: 0;
+    margin: map-get($spacing, 3) 0;
+    background: map-get($ui-colors, success);
+}
+
+.help-block.text-danger,
+.errors {
+    @include font-size(m3);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    padding: 0 map-get($spacing, 5) 0 map-get($spacing, 3);
+    color: map-get($ui-colors, red);
+    background: rgba(map-get($ui-colors, red), .2);
+    border-radius: 5px;
+    width: 55%;
+
+    &:after {
+        content: '';
+        display: flex;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        width: 9px;
+        height: 9px;
+        background: map-get($ui-colors, red);
+        border-radius: 50%;
+        transform: translateY(-50%);
+
+
+    }
+}
+
+.errors {
+    margin-bottom: map-get($spacing, 3);
+}
+
+.Block__title {
+    @include font-size(3);
+    @extend %typography-style-form-label;
+
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 map_get($spacing, 6) 0;
+    justify-content: center;
+    align-items: center;
+
+    &:after {
+        content: '';
+        display: flex;
+        height: 1px;
+        width: 100%;
+        background: map_get($ui-colors, orange);
+    }
+}

@@ -1,0 +1,103 @@
+.PodcastLayout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    margin-top: map-get($spacing, 7);
+    margin-bottom: map-get($spacing, 7);
+
+    &--oneColumn {
+        grid-template-columns: 1fr;
+
+        .datagrid-podcastsGrid {
+            padding: 0;
+        }
+    }
+}
+
+
+.PodcastLayout__heading {
+    color: black;
+}
+
+.PodcastList {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    box-shadow: 0 30px 99px rgba(map-get($ui-colors, primary), .1);
+    padding: map-get($spacing, 3);
+    white-space: nowrap;
+    border: 1px solid rgba(map-get($ui-colors, light-primary), 0.2);
+}
+
+.PodcastList__show {
+    @extend %typography-style-podcast-list;
+
+    margin: map-get($spacing, 7) 0;
+
+    p {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.8;
+        margin-bottom: map-get($spacing, 4);
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        height: 40px;
+        background: rgba(map-get($ui-colors, orange), 0.2);
+        font-weight: bold;
+    }
+}
+
+.PodcastLayout__title {
+    @extend %typography-style-podcast-list;
+
+    display: flex;
+    align-items: center;
+    color: map-get($ui-colors, primary);
+    height: 100%;
+    border: 1px solid map-get($ui-colors, light-primary);
+
+    &:hover {
+        text-decoration: underline;
+        color: map-get($ui-colors, orange);
+    }
+}
+
+.datagrid {
+    padding: 2em 0 !important;
+}
+
+.PodcastLayout__MD {
+    table {
+        width: 100%;
+        border: 1px solid map_get($ui-colors, light-primary);
+    }
+
+    tr {
+        transition: background .1s ease-in-out;
+
+        &:nth-child(odd) {
+            background: rgba(map_get($ui-colors, primary), 0.1);
+        }
+
+        &:hover {
+            background: rgba(map_get($ui-colors, primary), 0.15);
+        }
+    }
+
+    th, td {
+        padding: map_get($spacing, 3);
+        border: 1px solid map_get($ui-colors, light-primary);
+    }
+
+    td {
+        padding: map_get($spacing, 1) map_get($spacing, 3);
+    }
+
+    th {
+        background: rgba(map_get($ui-colors, primary), 0.2);
+    }
+}

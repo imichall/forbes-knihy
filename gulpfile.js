@@ -24,7 +24,7 @@ const commonjs = require('rollup-plugin-commonjs');
 
 // Proxies
 const proxy = {
-    web: "forbes-podcast.l/"
+    web: "0.0.0.0:8000/"
 };
 
 // Define let of path

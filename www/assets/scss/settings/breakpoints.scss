@@ -1,0 +1,32 @@
+// stylelint-disable property-no-unknown
+
+$breakpoint-list: (
+    xs: 48em,
+    sm: 64em,
+    md: 86em,
+    lg: 102em,
+);
+
+@mixin breakpoint-xs-min {
+    @media screen and (min-width: map-get($breakpoint-list, xs)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-sm-min {
+    @media screen and (min-width: map-get($breakpoint-list, sm)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-md-min {
+    @media screen and (min-width: map-get($breakpoint-list, md)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-lg-min {
+    @media screen and (min-width: map-get($breakpoint-list, lg)) {
+        @content;
+    }
+}

@@ -1,0 +1,49 @@
+// Base styles are also exposed as helper classes in CSS.
+
+%typography-style-menu-item {
+    @include font-size(3);
+
+    font-family: $typography-font-family-base;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @include breakpoint-sm-min {
+        @include font-size(5);
+
+        font-family: $typography-font-family-baseBold;
+    }
+}
+
+%typography-style-headline {
+    @include font-size(2);
+
+    font-family: $typography-font-family-base;
+    font-weight: 400;
+    text-decoration: none;
+    color: map-get($ui-colors, secondary);
+
+    @include breakpoint-sm-min {
+        @include font-size(4);
+    }
+}
+
+%typography-style-form-label {
+    @include font-size(0);
+
+    font-family: $typography-font-family-base;
+    font-weight: 300;
+}
+
+%typography-style-podcast-list {
+    @include font-size(0);
+
+    font-family: $typography-font-family-base;
+    font-weight: map-get($typography-font-weight-values, light);
+}
+
+%typography-style-flash-messages {
+    @include font-size(1);
+
+    font-family: $typography-font-family-base;
+    font-weight: 700;
+}

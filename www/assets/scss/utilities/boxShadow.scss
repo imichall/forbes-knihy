@@ -1,0 +1,8 @@
+.u-boxShadow {
+    box-shadow: $boxshadow;
+}
+
+.u-boxShadow-bordered {
+    box-shadow: $boxshadow;
+    border: 1px solid lighten(map-get($ui-colors, light-primary), 30%);
+}

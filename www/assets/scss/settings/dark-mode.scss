@@ -1,0 +1,16 @@
+$modes: (
+    light-mode: light,
+    dark-mode: dark,
+);
+
+@mixin darkmode {
+  @media screen and (prefers-color-scheme: map-get($modes, dark-mode)) {
+    @content;
+  }
+}
+
+@mixin lightmode {
+  @media screen and (prefers-color-scheme: map-get($modes, light-mode)) {
+    @content;
+  }
+}

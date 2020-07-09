@@ -1,0 +1,82 @@
+.Badge {
+    @extend %typography-style-podcast-list;
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: start;
+    color: map-get($ui-colors, orange);
+}
+
+.Badge--alignLeft {
+    justify-content: start;
+}
+
+.Badge__counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: map-get($ui-colors, primary);
+    color: map-get($ui-colors, secondary);
+    border: 1px solid map-get($ui-colors, primary);
+}
+
+.Badge__box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+}
+
+.Badge__box-trash {
+    background: map-get($ui-colors, light-primary);
+    fill: currentColor;
+
+    .Icon-trash {
+        color: map-get($ui-colors, secondary);
+    }
+
+    &:hover {
+        background: map-get($ui-colors, primary);
+
+        .Icon-trash {
+            color: map-get($ui-colors, red);
+        }
+    }
+}
+
+.Badge__box-edit {
+    background: map-get($ui-colors, light-primary);
+    fill: currentColor;
+
+    .Icon-edit {
+        color: map-get($ui-colors, secondary);
+    }
+
+    &:hover {
+        background: map-get($ui-colors, primary);
+
+        .Icon-edit {
+            color: map-get($ui-colors, blue);
+        }
+    }
+}
+
+.Badge__onlineUsers {
+    position: relative;
+    display: inline-flex;
+    background: map_get($ui-colors, success);
+    align-items: center;
+    min-width: 25px;
+    min-height: 25px;
+    justify-content: center;
+    border-radius: 50%;
+    color: map_get($ui-colors, secondary);
+    box-shadow: 0 3px 10px rgba(darken(map_get($ui-colors, success), 20%), 0.5);
+    border: 1px solid darken(map_get($ui-colors, success), 5%);
+    z-index: 1000;
+}
+

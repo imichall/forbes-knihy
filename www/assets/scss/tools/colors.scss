@@ -1,0 +1,9 @@
+@each $color, $value in $ui-colors {
+    .h-bgColor--#{$color} {
+        background-color: $value;
+    }
+
+    .h-perexColor--#{$color} {
+        color: $value;
+    }
+}

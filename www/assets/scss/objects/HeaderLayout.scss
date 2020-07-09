@@ -1,0 +1,59 @@
+.HeaderLayout {
+    display: flex;
+    width: 100%;
+    height: 65px;
+    align-items: center;
+    color: map-get($ui-colors, orange);
+    background: map-get($ui-colors, secondary);
+}
+
+.HeaderLayout__Brand {
+    align-items: center;
+}
+
+.HeaderLayout__Navbar {
+    display: inline-flex;
+    width: 100%;
+}
+
+.HeaderLayout__Menu {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.HeaderLayout__List {
+    display: flex;
+    align-items: center;
+}
+
+.HeaderLayout__ListItem {
+    @include font-size(m3);
+
+    position: relative;
+    font-family: $typography-font-family-baseBold;
+    margin: 0 map_get($spacing, 4);
+    text-transform: uppercase;
+
+    &:hover::after {
+        width: 20px;
+        opacity: 1;
+    }
+}
+
+.HeaderLayout__ListItem::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    display: block;
+    height: 1px;
+    width: 0;
+    background: map_get($ui-colors, orange);
+    transition: all .2s ease-in-out;
+    opacity: 0;
+}
+
+/*.HeaderLayout__ListItem:last-child::after {
+    display: none;
+}*/
+

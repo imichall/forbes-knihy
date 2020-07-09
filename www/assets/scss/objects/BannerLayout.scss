@@ -1,0 +1,51 @@
+.BannerLayout {
+    display: flex;
+    height: 504px;
+    align-items: center;
+
+    &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        background: url('/assets/images/layout/books_600x215.png') no-repeat center center;
+        background-size: cover;
+        height: 504px;
+        width: 100%;
+        z-index: -10;
+    }
+}
+
+.BannerLayout__Grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 30px;
+    padding: 80px;
+    color: map_get($ui-colors, secondary);
+
+    @include breakpoint-xs-min {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+}
+
+.BannerLayout__Info {
+    display: grid;
+    font-family: $typography-font-family-noto;
+
+    h1 {
+        @include font-size(6);
+    }
+}
+
+.BannerLayout__Content {
+    @include font-size(m2);
+
+    display: grid;
+    align-items: center;
+    font-family: $typography-font-family-noto;
+
+    p:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}

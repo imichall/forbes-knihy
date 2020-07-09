@@ -1,0 +1,51 @@
+// stylelint-disable property-no-unknown
+
+$_spacing-margins: (
+    m: margin,
+    mt: margin-top,
+    mr: margin-right,
+    mb: margin-bottom,
+    ml: margin-left,
+);
+
+$_spacing-paddings: (
+    p: padding,
+    pt: padding-top,
+    pr: padding-right,
+    pb: padding-bottom,
+    pl: padding-left,
+);
+
+@mixin spacing-generate-padding-utilities($breakpoint: "") {
+    @each $padding, $prefix in $_spacing-paddings {
+        @each $size, $key in $spacing {
+            .u#{$breakpoint}-#{$padding}-#{$size} {
+                #{$prefix}: $key !important;
+            }
+        }
+    }
+}
+
+@mixin spacing-generate-margin-utilities($breakpoint: "") {
+    @each $padding, $prefix in $_spacing-margins {
+        @each $size, $key in $spacing {
+            .u#{$breakpoint}-#{$padding}-#{$size} {
+                #{$prefix}: $key !important;
+            }
+        }
+    }
+}
+
+@mixin spacing-generate-responsive-utilities() {
+    @include spacing-generate-padding-utilities();
+    @include spacing-generate-margin-utilities();
+
+    @each $breakpoint, $value in $breakpoint-list {
+        $media-breakpoint: breakpoint-#{$value}-min;
+
+        @media ($media-breakpoint) {
+            @include spacing-generate-padding-utilities(-#{$breakpoint});
+            @include spacing-generate-margin-utilities(-#{$breakpoint});
+        }
+    }
+}

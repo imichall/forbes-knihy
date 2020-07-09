@@ -1,0 +1,13 @@
+$radius: (
+    none: 0px,
+    2: 2px,
+    3: 3px,
+    4: 4px,
+    6: 6px,
+);
+
+@each $value, $size in $radius {
+    .u-radius-#{$value} {
+        border-radius: $size;
+    }
+}

@@ -6,7 +6,7 @@
 }
 
 .RestartBar__restartBlock {
-    display: flex;
+    display: grid;
     align-items: center;
 }
 
@@ -16,18 +16,26 @@
 
 .RestartBar__Separator {
     position: relative;
-    display: flex;
-    padding: 0 50px;
+    display: none;
+    padding: 0 20px;
+
+    @include breakpoint-sm-min {
+        display: flex;
+    }
 
     &:after {
         content: '';
         position: absolute;
-        top: -10px;
+        top: -50px;
         display: flex;
-        height: 50px;
+        height: 150px;
         width: 2px;
         background: map_get($ui-colors, secondary);
-        transform: rotate(30deg);
+        transform: rotate(0deg);
+
+        @include breakpoint-sm-min {
+            transform: rotate(30deg);
+        }
     }
 }
 
@@ -39,18 +47,29 @@
 .RestartBar__menuList {
     @include font-size(m2);
 
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px 0;
+    margin: 0 map_get($spacing, 4);
     align-items: center;
     width: 100%;
     color: map_get($ui-colors, secondary);
+
+    @include breakpoint-sm-min {
+        display: flex;
+    }
 
     li {
         @include font-size(m3);
 
         display: inline-flex;
-        margin: 0 map_get($spacing, 4);
+        margin: 0;
         font-family: $typography-font-family-baseBold;
         text-transform: uppercase;
+
+        @include breakpoint-sm-min {
+            margin: 0 map_get($spacing, 4);
+        }
     }
 
     a {

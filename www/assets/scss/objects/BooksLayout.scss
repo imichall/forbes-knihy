@@ -14,35 +14,59 @@
     }
 }
 
-.BooksLayout__Books {
+.BooksLayout__Card {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     margin: map_get($spacing, 6) 0;
     justify-items: center;
 }
 
 .BooksLayout__Books--single {
     display: grid;
+    position: relative;
+    margin: map_get($spacing, 5) 0;
     padding: map_get($spacing, 4) map_get($spacing, 7);
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-        'image image'
-        'title title'
-        'price price'
-        'order order'
-        'infoButton infoButton';
-    grid-template-rows: repeat(4, auto);
+        'image image image'
+        'title title title'
+        'desc desc desc'
+        'format format format'
+        'pages pages pages'
+        'price price price'
+        'order order order';
+    grid-template-rows: auto;
     grid-row-gap: 15px;
-    border: 1px solid lighten(map_get($ui-colors, light-primary), 30%);
+    column-gap: 15px;
     transition: all .2s ease-in-out;
 
-    &:hover {
-        box-shadow: $boxshadow;
+    @include breakpoint-xs-min {
+        grid-template-areas:
+            'image desc price'
+            'image desc format'
+            'image desc pages'
+            'title desc order';
+        grid-template-rows: repeat(4, auto);
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: - map_get($spacing, 4);
+        display: flex;
+        border-bottom: 3px dotted lighten(map_get($ui-colors, light-primary), 30%);
+        width: 100%;
+    }
+
+    &:last-child:after {
+        display: none;
     }
 }
 
 .Book__image {
     grid-area: image;
+    display: grid;
+    justify-items: center;
 
     img {
         width: 225px;
@@ -53,6 +77,7 @@
     grid-area: title;
     display: grid;
     justify-items: center;
+    align-items: center;
 
     p {
         @include font-size(2);
@@ -106,4 +131,62 @@
     color: map_get($ui-colors, primary);
 }
 
+.Book__desc {
+    @include font-size(m2);
+
+    position: relative;
+    grid-area: desc;
+    max-height: 380px;
+    width: 100%;
+    font-family: $typography-font-family-base;
+    border: 1px solid map_get($ui-colors, border);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    line-height: map_get($spacing, 5);
+
+    &:after {
+        content: '';
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 80px;
+        background: linear-gradient(rgba(map_get($ui-colors, secondary), .4), rgba(map_get($ui-colors, secondary), 1));
+    }
+
+    p {
+        padding: map_get($spacing, 4);
+    }
+}
+
+.Block__pages {
+    grid-area: pages;
+    display: grid;
+    justify-items: center;
+    font-family: $typography-font-family-base;
+
+    p {
+        color: map_get($ui-colors, light-primary);
+    }
+
+    strong {
+        color: map_get($ui-colors, primary);
+    }
+}
+
+.Block__format {
+    grid-area: format;
+    display: grid;
+    justify-items: center;
+    font-family: $typography-font-family-base;
+
+    p {
+        color: map_get($ui-colors, light-primary);
+    }
+
+    strong {
+        color: map_get($ui-colors, primary);
+    }
+}
 

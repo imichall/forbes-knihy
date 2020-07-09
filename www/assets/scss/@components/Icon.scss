@@ -124,8 +124,57 @@
 .Icon-Restart {
     display: inline-flex;
     width: 75px;
-    height: 12px;
-    margin: 10px 0;
-    color: map_get($ui-colors, secondary);
+    height: 18px;
+    background: map_get($ui-colors, secondary);
+    color: map_get($ui-colors, restart);
+    fill: currentColor;
+    padding: map_get($spacing, 1);
+    border-radius: 3px;
+
+    @include breakpoint-sm-min {
+        background: transparent;
+        color: map_get($ui-colors, secondary);
+        height: 12px;
+        padding: 0;
+        border-radius: 0;
+    }
+}
+
+.IconSoc {
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.IconSoc__fb,
+.IconSoc__tw,
+.IconSoc__ig,
+.IconSoc__in {
+    padding: 6px;
+    border: 1px solid map_get($colors-soc, fb);
+    color: map_get($colors-soc, fb);
+    fill: currentColor;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.IconSoc__tw {
+    border: 1px solid map_get($colors-soc, tw);
+    color: map_get($colors-soc, tw);
+    fill: currentColor;
+}
+
+.IconSoc__ig {
+    border: 1px solid map_get($colors-soc, ig);
+    color: map_get($colors-soc, ig);
+    fill: currentColor;
+}
+
+.IconSoc__in {
+    border: 1px solid map_get($colors-soc, in);
+    color: map_get($colors-soc, in);
     fill: currentColor;
 }

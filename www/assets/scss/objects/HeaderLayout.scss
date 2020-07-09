@@ -1,4 +1,5 @@
 .HeaderLayout {
+    position: relative;
     display: flex;
     width: 100%;
     height: 65px;
@@ -14,17 +15,63 @@
 .HeaderLayout__Navbar {
     display: inline-flex;
     width: 100%;
+    padding: 0 map_get($spacing, 4);
+
+    @include breakpoint-sm-min {
+        margin: 0;
+    }
+}
+
+.Navbar-Menu {
+    display: grid;
+    align-self: center;
+    justify-items: end;
+    width: 100%;
+    cursor: pointer;
+
+    @include breakpoint-sm-min {
+        display: none;
+    }
 }
 
 .HeaderLayout__Menu {
+    position: absolute;
+    top: 65px;
+    left: 0;
     display: flex;
     width: 100%;
     justify-content: flex-end;
+
+    @include breakpoint-sm-min {
+        position: unset;
+    }
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
 }
 
 .HeaderLayout__List {
-    display: flex;
+    position: fixed;
+    display: none;
     align-items: center;
+    flex-direction: column;
+    background: map_get($ui-colors, secondary);
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+
+    &.isActive {
+        display: flex;
+    }
+
+    @include breakpoint-sm-min {
+        display: flex;
+        flex-direction: row;
+        position: unset;
+        width: unset;
+    }
 }
 
 .HeaderLayout__ListItem {
@@ -32,8 +79,12 @@
 
     position: relative;
     font-family: $typography-font-family-baseBold;
-    margin: 0 map_get($spacing, 4);
+    margin: map_get($spacing, 4) map_get($spacing, 4);
     text-transform: uppercase;
+
+    @include breakpoint-sm-min {
+        margin: 0 map_get($spacing, 4);
+    }
 
     &:hover::after {
         width: 20px;

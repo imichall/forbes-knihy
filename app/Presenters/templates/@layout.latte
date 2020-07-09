@@ -55,20 +55,28 @@
 						</li>*}
 					</ul>
 				</div>
+				<div class="Navbar-Menu">
+					<div id="menu">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
 			</nav>
 		</div>
 	</header>
 	<div class="RestartBar">
 		<div class="Container Container--small">
 			<div class="RestartBar__restartBlock">
-				<div class="RestartBar__logo">
-					<svg class="Icon-Restart">
-						<use xlink:href="{$basePath}/build/svg/sources/sprite.svg#restart"></use>
-					</svg>
-					<span class="RestartBar__Separator"></span>
-				</div>
 				<div class="RestartBar__menu">
 					<ul class="RestartBar__menuList">
+						<div class="RestartBar__logo">
+							<svg class="Icon-Restart">
+								<use xlink:href="{$basePath}/build/svg/sources/sprite.svg#restart"></use>
+							</svg>
+							<span class="RestartBar__Separator"></span>
+						</div>
 						<li><a href="https://api.forbes.cz/covid19/restart/pomoc-od-statu/?_ga=2.250613574.1728328318.1594107915-1840150553.1593780825">pomoc od státu</a></li>
 						<li><a href="https://api.forbes.cz/covid19/restart/jak-nastartovat-byznys/?_ga=2.249898950.1728328318.1594107915-1840150553.1593780825">jak nastartovat byznys</a></li>
 						<li><a href="https://api.forbes.cz/covid19/restart/jak-nastartovat-sebe/?_ga=2.249898950.1728328318.1594107915-1840150553.1593780825">jak nastartovat sebe</a></li>
@@ -82,8 +90,83 @@
 
 	{include #content}
 
+	<div class="FooterLayout">
+		<div class="Container Container--smallest">
+			<div class="FooterLayout__Wrapper">
+				<div class="Footer__Card">
+					<ul class="Footer__List">
+						<li><a href="https://www.forbes.cz/">Hlavní stránka</a></li>
+						<li><a href="https://www.forbes.cz/forbes-obchod/">Předplatné</a></li>
+						<li><a href="https://www.forbes.cz/eventy/">Eventy</a></li>
+						<li><a href="https://www.forbes.cz/advoice/">AdVoice</a></li>
+						<li><a href="https://www.forbes.cz/tag/forbes-video/">Video</a></li>
+						<li><a href="https://www.forbes.cz/tag/forbes-espresso/">Espresso</a></li>
+					</ul>
+				</div>
+				<div class="Footer__Card">
+					<ul class="Footer__List">
+						<li><a href="https://www.forbes.cz/tag/forbes-cocktail/">Coctail</a></li>
+						<li><a href="https://www.forbes.cz/quotes/">Citáty</a></li>
+						<li><a href="https://www.forbes.cz/inzerce/">Inzerce</a></li>
+						<li><a href="https://www.forbes.cz/kontakty/">Kontakty</a></li>
+						<li><a href="https://www.forbes.cz/obchodni-podminky-a-informace-ke-zpracovani-osobnich-udaju/">Podmínky a os. údaje</a></li>
+					</ul>
+				</div>
+				<div class="Footer__Card">
+					<ul class="Footer__List">
+						<li><strong>Předplatné</strong></li>
+						<li><a href="tel:+420 228 226 824"><strong>+420 228 226 824</strong></a></li>
+						<li><a href="mailto:publisher@forbes.cz">publisher@forbes.cz</a></li>
+						<li><strong>Redakce</strong></li>
+						<li><a href="tel:+420 228 225 093"><strong>+420 228 225 093</strong></a></li>
+					</ul>
+				</div>
+				<div class="Footer__Card">
+					<ul class="Footer__List">
+						<li>Sledujte nás</li>
+						<li class="u-mt-2">
+							<div class="IconSoc">
+								<a href="https://facebook.com/forbescesko" class="noDecoration" target="_blank" rel="noopener noreferrer">
+									<svg class="IconSoc__fb">
+										<use xlink:href="{$basePath}/build/svg/sources/sprite.svg#facebook-f-brands(1)">
+										</use>
+									</svg>
+								</a>
+							</div>
+							<div class="IconSoc">
+								<a href="https://twitter.com/forbescesko" class="noDecoration" target="_blank" rel="noopener noreferrer">
+									<svg class="IconSoc__tw">
+										<use xlink:href="{$basePath}/build/svg/sources/sprite.svg#twitter-brands">
+										</use>
+									</svg>
+								</a>
+							</div>
+							<div class="IconSoc">
+								<a href="https://instagram.com/forbescesko" class="noDecoration" target="_blank" rel="noopener noreferrer">
+									<svg class="IconSoc__ig">
+										<use xlink:href="{$basePath}/build/svg/sources/sprite.svg#instagram-brands(1)">
+										</use>
+									</svg>
+								</a>
+							</div>
+							<div class="IconSoc">
+								<a href="https://linkedin.com/company/forbes-%C4%8Desko/" class="noDecoration" target="_blank" rel="noopener noreferrer">
+									<svg class="IconSoc__in">
+										<use xlink:href="{$basePath}/build/svg/sources/sprite.svg#linkedin-in-brands">
+										</use>
+									</svg>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	{block scripts}
 	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+	<script src="{$basePath}/build/js/scripts.min.js?v={filemtime('build/js/scripts.min.js')}"></script>
 	{/block}
 </body>
 </html>

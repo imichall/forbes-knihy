@@ -1,0 +1,82 @@
+.FooterLayout {
+    border-top: 1px solid map_get($ui-colors, border);
+    background: map_get($ui-colors, secondary);
+}
+
+.FooterLayout__Wrapper {
+    display: grid;
+    margin: map_get($spacing, 70) 0;
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+
+    @include breakpoint-xs-min {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 30px;
+    }
+
+    @include breakpoint-md-min {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 30px;
+    }
+}
+
+.Footer__Card {
+    @include font-size(m2);
+
+    display: grid;
+    width: 100%;
+    font-family: $typography-font-family-base;
+    color: map_get($ui-colors, footer-text);
+    justify-items: center;
+
+    @include breakpoint-sm-min {
+        justify-items: start;
+    }
+}
+
+.Footer__List {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    padding: 0 map_get($spacing, 5);
+
+    @include breakpoint-sm-min {
+        display: unset;
+        padding: 0;
+        justify-items: unset;
+    }
+
+    li {
+        line-height: map_get($spacing, 6);
+        font-family: $typography-font-family-baseBold;
+    }
+
+    a {
+        position: relative;
+    }
+
+    .noDecoration:after {
+        display: none;
+    }
+
+    a:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background: currentColor;
+        transform: translateX(-50%);
+        transition: width .1s ease-in-out;
+    }
+
+    a:hover:after {
+        width: 100%;
+    }
+
+    strong {
+        color: darken(map_get($ui-colors, light-primary), 25%);
+    }
+}

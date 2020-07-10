@@ -42,9 +42,9 @@
 
     @include breakpoint-xs-min {
         grid-template-areas:
-            'image desc price'
             'image desc format'
             'image desc pages'
+            'image desc price'
             'title desc order';
         grid-template-rows: repeat(4, auto);
     }
@@ -65,11 +65,23 @@
 
 .Book__image {
     grid-area: image;
+    position: relative;
     display: grid;
     justify-items: center;
 
     img {
         width: 225px;
+    }
+
+    .Book__timeRelease {
+        @include font-size(m2);
+
+        font-family: $typography-font-family-base;
+        color: map_get($ui-colors, primary);
+
+        strong {
+            font-family: $typography-font-family-baseBold;
+        }
     }
 }
 
@@ -100,9 +112,12 @@
     justify-items: center;
 
     p {
-        @include font-size(0);
+        @include font-size(4);
 
+        display: flex;
+        align-items: center;
         font-family: $typography-font-family-baseBold;
+        color: darken(map_get($ui-colors, gold), 10%);
     }
 
     span {
@@ -123,7 +138,14 @@
     justify-items: center;
     font-family: $typography-font-family-baseBold;
     text-transform: uppercase;
-    color: map_get($ui-colors, secondary)
+    color: map_get($ui-colors, secondary);
+
+    .Book__orderTime {
+        @include font-size(m2);
+
+        color: map_get($ui-colors, light-primary);
+        text-transform: lowercase;
+    }
 }
 
 .Book__infoButton {
@@ -140,6 +162,7 @@
     width: 100%;
     font-family: $typography-font-family-base;
     border: 1px solid map_get($ui-colors, border);
+    border-radius: 5px;
     overflow-y: scroll;
     overflow-x: hidden;
     line-height: map_get($spacing, 5);

@@ -30,11 +30,24 @@
         left: 0;
         top: 0;
         display: block;
-        background: url('/assets/images/layout/books_600x215.png') no-repeat center center;
+        background-image: url('/assets/images/layout/aaron-burden-unsplash.jpg');
+        background-position: center bottom -150px;
+        background-repeat: no-repeat;
         background-size: cover;
         height: 504px;
         width: 100%;
         z-index: -10;
+    }
+
+    &:after {
+        content: '';
+        background-color: rgba(map_get($ui-colors, primary), .4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 504px;
+        z-index: -9;
     }
 
     @include breakpoint-xs-min {
@@ -63,5 +76,9 @@
 
     p:not(:last-child) {
         margin-bottom: 15px;
+    }
+
+    a {
+        color: map_get($ui-colors, gold);
     }
 }

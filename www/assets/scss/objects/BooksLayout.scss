@@ -40,7 +40,7 @@
     column-gap: 15px;
     transition: all .2s ease-in-out;
 
-    @include breakpoint-xs-min {
+    @include breakpoint-sm-min {
         grid-template-areas:
             'image desc format'
             'image desc pages'
@@ -70,7 +70,7 @@
     justify-items: center;
 
     img {
-        width: 225px;
+        width: 425px;
     }
 
     .Book__timeRelease {

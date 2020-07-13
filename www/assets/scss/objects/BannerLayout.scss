@@ -19,7 +19,7 @@
 .BannerLayout__Grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     grid-row-gap: 15px;
     padding: 15px;
     color: map_get($ui-colors, secondary);
@@ -65,6 +65,7 @@
 .BannerLayout__Info {
     display: grid;
     font-family: $typography-font-family-noto;
+
 
     h1 {
         @include font-size(6);

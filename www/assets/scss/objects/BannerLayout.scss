@@ -73,7 +73,7 @@
 }
 
 .BannerLayout__Content {
-    @include font-size(m2);
+    @include font-size(0);
 
     display: grid;
     align-items: center;

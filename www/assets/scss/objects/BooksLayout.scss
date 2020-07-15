@@ -10,7 +10,7 @@
     justify-content: center;
 
     h2 {
-        font-family: $typography-font-family-baseBold;
+        font-family: $typography-font-family-noto;
     }
 }
 
@@ -82,11 +82,11 @@
     .Book__timeRelease {
         @include font-size(m2);
 
-        font-family: $typography-font-family-base;
+        font-family: $typography-font-family-noto;
         color: map_get($ui-colors, primary);
 
         strong {
-            font-family: $typography-font-family-baseBold;
+            font-family: $typography-font-family-noto;
         }
     }
 }
@@ -100,14 +100,14 @@
     p {
         @include font-size(2);
 
-        font-family: $typography-font-family-baseBold;
+        font-family: $typography-font-family-noto;
         text-transform: uppercase;
     }
 
     span {
         @include font-size(m1);
 
-        font-family: $typography-font-family-base;
+        font-family: $typography-font-family-noto;
         color: map_get($ui-colors, light-primary);
     }
 }
@@ -122,14 +122,14 @@
 
         display: flex;
         align-items: center;
-        font-family: $typography-font-family-baseBold;
+        font-family: $typography-font-family-noto;
         color: darken(map_get($ui-colors, gold), 10%);
     }
 
     span {
         @include font-size(0);
 
-        font-family: $typography-font-family-base;
+        font-family: $typography-font-family-noto;
         color: map_get($ui-colors, light-primary);
         text-decoration: line-through;
     }
@@ -166,16 +166,16 @@
     grid-area: desc;
     width: 100%;
     padding: 0 map_get($spacing, 4);
-    font-family: $typography-font-family-base;
+    font-family: $typography-font-family-noto;
     overflow-y: scroll;
     line-height: map_get($spacing, 6);
 
     span {
-        @include font-size(1);
+        @include font-size(0);
 
         display: block;
         position: relative;
-        color: darken(map_get($ui-colors, light-primary), 10%);
+        /*color: darken(map_get($ui-colors, light-primary), 10%);*/
 
         &:after {
             content: '';
@@ -191,8 +191,6 @@
     }
 
     p {
-        @include font-size(m1);
-
         margin-top: map_get($spacing, 6);
     }
 }

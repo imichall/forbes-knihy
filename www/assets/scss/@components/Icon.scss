@@ -121,7 +121,8 @@
     fill: currentColor;
 }
 
-.Icon-Restart {
+.Icon-Restart,
+.Icon-Roadtrip {
     display: inline-flex;
     width: 75px;
     height: 18px;
@@ -137,6 +138,16 @@
         height: 12px;
         padding: 0;
         border-radius: 0;
+    }
+}
+
+.Icon-Roadtrip {
+    width: 127px;
+    height: 22px;
+
+    @include breakpoint-sm-min {
+        width: 127px;
+        height: 15px;
     }
 }
 

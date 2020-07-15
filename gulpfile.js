@@ -24,7 +24,7 @@ const commonjs = require('rollup-plugin-commonjs');
 
 // Proxies
 const proxy = {
-    web: "0.0.0.0:8000/"
+    web: "0.0.0.0:8005/"
 };
 
 // Define let of path

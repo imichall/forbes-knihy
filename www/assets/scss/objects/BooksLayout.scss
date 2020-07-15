@@ -25,8 +25,8 @@
     display: grid;
     position: relative;
     margin: map_get($spacing, 5) 0;
-    padding: map_get($spacing, 4) map_get($spacing, 7);
-    grid-template-columns: repeat(3, 1fr);
+    padding: map_get($spacing, 4) map_get($spacing, 2a);
+    grid-template-columns: 1fr;
     grid-template-areas:
         'image image image'
         'title title title'
@@ -41,6 +41,8 @@
     transition: all .2s ease-in-out;
 
     @include breakpoint-sm-min {
+        grid-template-columns: 250px 1fr 250px;
+        padding: map_get($spacing, 4) map_get($spacing, 7);
         grid-template-areas:
             'image desc format'
             'image desc pages'
@@ -70,7 +72,11 @@
     justify-items: center;
 
     img {
-        width: 425px;
+        width: 225px;
+
+        @include breakpoint-sm-min {
+            width: 250px;
+        }
     }
 
     .Book__timeRelease {
@@ -154,32 +160,40 @@
 }
 
 .Book__desc {
-    @include font-size(m2);
+    @include font-size(0);
 
     position: relative;
     grid-area: desc;
-    max-height: 380px;
     width: 100%;
+    padding: 0 map_get($spacing, 4);
     font-family: $typography-font-family-base;
-    border: 1px solid map_get($ui-colors, border);
-    border-radius: 5px;
     overflow-y: scroll;
-    overflow-x: hidden;
-    line-height: map_get($spacing, 5);
+    line-height: map_get($spacing, 6);
 
-    &:after {
-        content: '';
-        position: sticky;
-        bottom: 0;
-        left: 0;
+    span {
+        @include font-size(1);
+
         display: block;
-        width: 100%;
-        height: 80px;
-        background: linear-gradient(rgba(map_get($ui-colors, secondary), .4), rgba(map_get($ui-colors, secondary), 1));
+        position: relative;
+        color: darken(map_get($ui-colors, light-primary), 10%);
+
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            bottom: -20px;
+            left: 50%;
+            height: 1px;
+            width: 50%;
+            transform: translateX(-50%);
+            background: lighten(map_get($ui-colors, gold), 20%);
+        }
     }
 
     p {
-        padding: map_get($spacing, 4);
+        @include font-size(m1);
+
+        margin-top: map_get($spacing, 6);
     }
 }
 

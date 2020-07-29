@@ -1,6 +1,7 @@
 {block #content}
 {php $currentDate = new DateTime;}
-{php $today = $currentDate->format("d.m.Y")}
+{php $dateTime = $currentDate->format("H:i, d.m.Y")}
+{bdump($dateTime)}
 <div class="BannerLayout">
 
     <div class="Container Container--small">
@@ -32,7 +33,7 @@
         <div class="BooksLayout__Books">
             <div class="BooksLayout__Books--single">
                 <div class="Book__image">
-                    {if $today === "29.07.2020"}
+                    {if $dateTime < "17:00, 29.07.2020"}
                     <div class="Badge">
                         <span class="Badge__price">-15 %</span>
                     </div>
@@ -45,18 +46,18 @@
                     <span>Elton John</span>
                 </div>
                 <div class="Book__price">
-                    {if $today !== "29.07.2020"}
-                        <p>499 Kč</p>
-                    {else}
+                    {if $dateTime < "17:00, 29.07.2020"}
                         <p>424 Kč</p>
                         <span>499 Kč</span>
+                    {else}
+                        <p>499 Kč</p>
                     {/if}
                 </div>
                 <div class="Book__order">
                     <div class="Button">
-                        <a href="https://eshop.forbes.cz/order/magazine?prefilledType=2020/21" class="Button__small--green u-radius-3">Objednat</a>
+                        <a href="{if $dateTime < "17:00, 29.07.2020"}https://eshop.forbes.cz/order/magazine?prefilledType=2020/21{else}https://eshop.forbes.cz/order/magazine?prefilledType=2020/22{/if}" class="Button__small--green u-radius-3">Objednat</a>
                     </div>
-                    {if $today === "29.07.2020"}
+                    {if $dateTime < "17:00, 29.07.2020"}
                         <p class="Book__orderTime">Sleva platí do 29.7.2020</p>
                     {/if}
                 </div>

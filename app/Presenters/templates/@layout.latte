@@ -191,6 +191,11 @@
 	{block scripts}
 	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
 	<script src="{$basePath}/build/js/scripts.min.js?v={filemtime('build/js/scripts.min.js')}"></script>
+	<script type="text/javascript" n:syntax="off">
+		$('#AddToCart').click(function() {
+			fbq('track', 'AddToCart', {currency: "CZK", value: 499.00});
+		});
+	</script>
 	{/block}
 </body>
 </html>

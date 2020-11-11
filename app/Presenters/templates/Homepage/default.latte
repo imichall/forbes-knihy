@@ -32,18 +32,24 @@
         <div class="BooksLayout__Books">
             <div class="BooksLayout__Books--single">
                 <div class="Book__image">
+                    <div class="Book__Content">
                     {*{if $dateTime < "17:00:00, 29.07.2020"}
                     <div class="Badge">
                         <span class="Badge__price">-15 %</span>
                     </div>
                     {/if}*}
-                    <img src="{$basePath}/assets/images/books/EJ-obalka-CZ-3D.png" alt="">
-                    <p class="Book__timeRelease">Vychází <strong>22.7.2020</strong></p>
+                        <img src="{$basePath}/assets/images/books/EJ-obalka-CZ-3D.png" alt="">
+                        <div class="Book__title">
+                            <p>Já</p>
+                            <span>Elton John</span>
+                        </div>
+                    {* <p class="Book__timeRelease">Vychází <strong>22.7.2020</strong></p> *}
+                    </div>
                 </div>
-                <div class="Book__title">
+                {* <div class="Book__title">
                     <p>Já</p>
                     <span>Elton John</span>
-                </div>
+                </div> *}
                 <div class="Book__price">
                     {*{if $dateTime < "17:00:00, 29.07.2020"}
                         <p>424 Kč</p>
@@ -77,6 +83,74 @@
                 <div class="Block__format">
                     <p><strong>Formát:</strong></p>
                     <p>153 x 233 mm</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="offer" class="BooksLayout">
+        {* <div class="BooksLayout__Title">
+            <h2>Knihy v nabídce</h2>
+        </div> *}
+        <div class="BooksLayout__Books">
+            <div class="BooksLayout__Books--single">
+                <div class="Book__image">
+                    <div class="Book__Content">
+
+                        {*{if $dateTime < "17:00:00, 29.07.2020"}
+                        <div class="Badge">
+                            <span class="Badge__price">-15 %</span>
+                        </div>
+                        {/if}*}
+                        <img class="img_brain" src="{$basePath}/assets/images/books/dobehni_svuj_mozek.jpg" alt="">
+                        {* <p class="Book__timeRelease">Vychází <strong>22.7.2020</strong></p> *}
+                        <div class="Book__title">
+                            <p>Doběhni svůj mozek</p>
+                            <span>Anders Hansen</span>
+                        </div>
+                    </div>
+                </div>
+                {* <div class="Book__title">
+                    <p>Doběhni svůj mozek</p>
+                    <span>Anders Hansen</span>
+                </div> *}
+                <div class="Book__price">
+                    {*{if $dateTime < "17:00:00, 29.07.2020"}
+                        <p>424 Kč</p>
+                        <span>499 Kč</span>
+                    {else}*}
+                        <p>299 Kč</p>
+                    {*{/if}*}
+                </div>
+                <div class="Book__order">
+                    <div class="Button">
+                        {*<a href="{if $dateTime < "17:00:00, 29.07.2020"}https://eshop.forbes.cz/order/magazine?prefilledType=2020/21{else}https://eshop.forbes.cz/order/magazine?prefilledType=2020/22{/if}" class="Button__small--green u-radius-3">Objednat</a>*}
+                        <a id="AddToCart" href="https://eshop.forbes.cz/order/magazine?prefilledType=2020/23" class="Button__small--green u-radius-3">Objednat</a>
+                    </div>
+                    {*{if $dateTime < "17:00:00, 29.07.2020"}
+                        <p class="Book__orderTime">Sleva platí do 29.7.2020</p>
+                    {/if}*}
+                </div>
+                <div class="Book__desc">
+                    <span>Existuje spolehlivý způsob, jak snížit stres a úzkost a zároveň podpořit paměť? Zvýšit IQ a zpomalit proces stárnutí? Jak být kreativnější a přitom soustředěnější? Odpověď je jednoduchá: Hýbej se a doběhni svůj mozek!</span>
+                    <p>Pravidelné cvičení nevídaným způsobem stimuluje mozek. Jeho výsledky nepřekoná ani kombinovaný účinek léků, výživových doplňků a mentálních cvičení, jako je luštění křížovek a řešení sudoku. 
+Kniha Doběhni svůj mozek známého švédského psychiatra a „brain blogera“ Anderse Hansena vám ukáže:</p>
+                    <ul class="Book__List">
+                        <li>proč je tělesná aktivita nejlepší ochranou před demencí,</li>
+                        <li>jaký druh cvičení lze využít při léčbě deprese,</li>
+                        <li>jaké cvičení zvyšuje soustředění dětí, zvláště dětí s poruchou pozornosti a hyperaktivitou (ADHD),</li>
+                        <li>jak se mohou děti díky pravidelnému pohybu a tělesné aktivitě zlepšit v matematice a mluveném projevu,</li>
+                        <li>proč magický pocit euforie při běhání a látky, jež během něho tělo vylučuje, mají významný vliv na naše zdraví, energii a náladu.</li>
+                    </ul>
+                    <p>Kniha Doběhni svůj mozek vás určitě rozhýbe!</p>
+                </div>
+                <div class="Block__pages">
+                    <p><strong>Počet stran:</strong></p>
+                    <p>240</p>
+                </div>
+                <div class="Block__format">
+                    <p><strong>Formát:</strong></p>
+                    <p>148 x 210 mm</p>
                 </div>
             </div>
         </div>

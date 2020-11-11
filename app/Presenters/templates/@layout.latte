@@ -37,6 +37,20 @@
 
 <body>
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+	{* <div class="SpecialbarLayout">
+		<div class="Container Container--small">
+			<div class="SpecialbarLayout__Content">
+			<a class="BrandLogo" href="/">
+				<svg class="Icon-BrandLogo white">
+					<use xlink:href="{$basePath}/build/svg/sources/sprite.svg#forbes"></use>
+				</svg>
+			</a>
+			<div class="BarButton">
+				<a href="https://forbes.cz/" target="_blank" class="Button"></a>
+			</div>
+			</div>
+		</div>
+	</div> *}
 	<header class="HeaderLayout">
 		<div class="Container Container--small">
 			<nav class="HeaderLayout__Navbar">
@@ -89,7 +103,7 @@
 			</nav>
 		</div>
 	</header>
-	<div class="RoadtripBar">
+	{* <div class="RoadtripBar">
 		<div class="Container Container--small">
 			<div class="RoadtripBar__restartBlock">
 				<div class="RoadtripBar__menu">
@@ -109,7 +123,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> *}
 
 	{include #content}
 

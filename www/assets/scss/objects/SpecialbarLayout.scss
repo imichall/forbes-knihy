@@ -1,0 +1,16 @@
+.SpecialbarLayout {
+    display: flex;
+    align-items: center;
+    background: map-get($ui-colors, primary);
+    min-height: 35px;
+
+    &.SpecialbarLayout--border {
+        border-bottom: 0.2px solid rgba(map-get($ui-colors, secondary), .2);
+    }
+}
+
+.SpecialbarLayout__Content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}

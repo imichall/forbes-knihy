@@ -17,7 +17,7 @@ naja.addEventListener("interaction", (evt) => {
         evt.preventDefault();
 });
 
-$(document).ready(function() {
+$(document).ready(function() {
     setTimeout(function () {
         $(".Flashes").fadeOut('slow');
     }, 5000);

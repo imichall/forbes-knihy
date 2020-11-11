@@ -119,6 +119,11 @@
     height: 25px;
     color: map_get($ui-colors, primary);
     fill: currentColor;
+
+    &.white {
+        color: map_get($ui-colors, secondary);
+        fill: currentColor;
+    }
 }
 
 .Icon-Restart,

@@ -79,6 +79,10 @@
         }
     }
 
+    .img_brain {
+        width: 150px;
+    }
+
     .Book__timeRelease {
         @include font-size(m2);
 
@@ -94,6 +98,7 @@
 .Book__title {
     grid-area: title;
     display: grid;
+    margin-top: map-get($spacing, 5);
     justify-items: center;
     align-items: center;
 
@@ -195,6 +200,27 @@
     }
 }
 
+.Book__List {
+    margin-top: map-get($spacing, 4);
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-gap: map-get($spacing, 2);
+
+    li {
+        display: grid;
+        grid-template-columns: 0 1fr;
+        grid-gap: 1.75em;
+        align-items: start;
+        line-height: 1.5;
+        &:before {
+            content: '\25CF';
+            display: inline-block;
+            color: map-get($ui-colors, gold);
+        }
+    }
+}
+
 .Block__pages {
     grid-area: pages;
     display: grid;
@@ -225,3 +251,8 @@
     }
 }
 
+.Book__Content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

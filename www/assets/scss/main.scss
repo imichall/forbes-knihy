@@ -46,10 +46,12 @@
 @import "objects/HeaderLayout.scss";
 @import "objects/NavbarLayout.scss";
 @import "objects/PodcastLayout.scss";
+@import "objects/SpecialbarLayout.scss";
 
 // Components
 
 @import "@components/Badge.scss";
+@import "@components/BrandLogo.scss";
 @import "@components/Button.scss";
 @import "@components/Flashes.scss";
 @import "@components/Icon.scss";

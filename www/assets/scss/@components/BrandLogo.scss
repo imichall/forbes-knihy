@@ -1,0 +1,13 @@
+.BrandLogo {
+    display: grid;
+    align-items: center;
+
+    img {
+        width: 200px;
+    }
+}
+
+.BarButton {
+    display: grid;
+    justify-content: end;
+}

@@ -206,7 +206,8 @@
 	<script src="{$basePath}/build/js/scripts.min.js?v={filemtime('build/js/scripts.min.js')}"></script>
 	<script type="text/javascript" n:syntax="off">
 		$('#AddToCart').click(function() {
-			fbq('track', 'AddToCart', {currency: "CZK", value: 499.00});
+			fbq('track', 'AddToCart1', {currency: "CZK", value: 499.00});
+			fbq('track', 'AddToCart2', {currency: "CZK", value: 299.00});
 		});
 	</script>
 	{/block}

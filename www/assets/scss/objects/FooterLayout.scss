@@ -80,3 +80,31 @@
         color: darken(map_get($ui-colors, light-primary), 25%);
     }
 }
+
+.FooterAdditional {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: map-get($spacing, 4) map-get($spacing, 3) map-get($spacing, 7) map-get($spacing, 3);
+
+    @include breakpoint-xs-min {
+        margin: map-get($spacing, 4) 0 map-get($spacing, 7) 0;
+    }
+}
+
+.FooterAdditional__perex {
+    @include font-size(m3);
+
+    font-family: $typography-font-family-base;
+    color: map_get($ui-colors, footer-text);
+
+    a {
+        font-weight: 600;
+        color: map-get($ui-colors, primary)
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}

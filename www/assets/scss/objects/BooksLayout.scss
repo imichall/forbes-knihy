@@ -1,5 +1,6 @@
 .BooksLayout {
     display: grid;
+    position: relative;
     margin: map_get($spacing, 70) 0;
 }
 
@@ -107,6 +108,7 @@
 
         font-family: $typography-font-family-noto;
         text-transform: uppercase;
+        text-align: center;
     }
 
     span {
@@ -167,6 +169,10 @@
 .Book__desc {
     @include font-size(0);
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     position: relative;
     grid-area: desc;
     width: 100%;
@@ -223,8 +229,10 @@
 
 .Block__pages {
     grid-area: pages;
-    display: grid;
-    justify-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     font-family: $typography-font-family-base;
 
     p {
@@ -238,8 +246,10 @@
 
 .Block__format {
     grid-area: format;
-    display: grid;
-    justify-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     font-family: $typography-font-family-base;
 
     p {

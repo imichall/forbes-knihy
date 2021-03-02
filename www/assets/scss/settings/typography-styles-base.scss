@@ -27,6 +27,46 @@
     }
 }
 
+%typography-style-faq-title {
+    @include font-size(5);
+
+    font-family: $typography-font-family-noto;
+    font-weight: 400;
+    text-decoration: none;
+    color: map-get($ui-colors, primary);
+
+    @include breakpoint-sm-min {
+        @include font-size(6);
+    }
+}
+
+%typography-style-faq-question {
+    @include font-size(2);
+
+    font-family: $typography-font-family-noto;
+    font-weight: 400;
+    text-decoration: none;
+    color: map-get($ui-colors, primary);
+
+    @include breakpoint-sm-min {
+        @include font-size(3);
+    }
+}
+
+%typography-style-faq-answer {
+    @include font-size(0);
+
+    font-family: $typography-font-family-base;
+    font-weight: 400;
+    text-decoration: none;
+    color: lighten(map-get($ui-colors, primary), 10%);
+    line-height: 1.5em;
+
+    @include breakpoint-sm-min {
+        @include font-size(0);
+    }
+}
+
 %typography-style-form-label {
     @include font-size(0);
 

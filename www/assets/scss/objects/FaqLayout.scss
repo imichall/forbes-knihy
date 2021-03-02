@@ -1,0 +1,34 @@
+.FaqLayout {
+    display: grid;
+    margin: map-get($spacing, 7);
+}
+
+.FaqLayout_Box {
+    display: grid;
+    grid-gap: map-get($spacing, 4);
+    background-color: lighten(map-get($ui-colors, light-primary), 30%);
+    padding: map-get($spacing, 7);
+}
+
+.FaqLayout_Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 map-get($spacing, 4) 0;
+
+    h2 {
+        @extend %typography-style-faq-title;
+    }
+}
+
+.FaqLayout_Questions-Answers {
+    display: grid;
+}
+
+.FaqLayout_Question {
+    @extend %typography-style-faq-question;
+}
+
+.FaqLayout_Answer {
+    @extend %typography-style-faq-answer;
+}

@@ -71,6 +71,11 @@
     @include breakpoint-sm-min {
         @include font-size(0);
     }
+
+    a {
+        color: map-get($ui-colors, gold);
+        text-decoration: underline;
+    }
 }
 
 %typography-style-form-label {

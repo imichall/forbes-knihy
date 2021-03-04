@@ -1,13 +1,19 @@
 .FaqLayout {
     display: grid;
-    margin: map-get($spacing, 7);
+    margin: map-get($spacing, 7) map-get($spacing, 3);
 }
 
 .FaqLayout_Box {
     display: grid;
     grid-gap: map-get($spacing, 4);
-    background-color: lighten(map-get($ui-colors, light-primary), 30%);
-    padding: map-get($spacing, 7);
+    // background-color: lighten(map-get($ui-colors, light-primary), 30%);
+    padding: map-get($spacing, 3);
+    box-shadow: 0 30px 30px -10px rgba(map-get($ui-colors, primary), .1);
+    border-top: 2px solid map-get($ui-colors, gold);
+
+    @include breakpoint-sm-min {
+        padding: map-get($spacing, 7);
+    }
 }
 
 .FaqLayout_Title {
@@ -27,8 +33,11 @@
 
 .FaqLayout_Question {
     @extend %typography-style-faq-question;
+
+    margin-bottom: map-get($spacing, 2);
 }
 
 .FaqLayout_Answer {
     @extend %typography-style-faq-answer;
+
 }

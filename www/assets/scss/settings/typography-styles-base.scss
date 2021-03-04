@@ -51,6 +51,12 @@
     @include breakpoint-sm-min {
         @include font-size(3);
     }
+
+    &::before {
+        content: '\25A0';
+        color: map-get($ui-colors, gold);
+        padding-right: map-get($spacing, 2);
+    }
 }
 
 %typography-style-faq-answer {
@@ -59,8 +65,8 @@
     font-family: $typography-font-family-base;
     font-weight: 400;
     text-decoration: none;
-    color: lighten(map-get($ui-colors, primary), 10%);
-    line-height: 1.5em;
+    color: lighten(map-get($ui-colors, primary), 30%);
+    line-height: 1.6;
 
     @include breakpoint-sm-min {
         @include font-size(0);
